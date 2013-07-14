@@ -82,10 +82,3 @@ class Link():
 
     def get_url_original(self):
         return self.__response['UrlOriginal']
-
-
-if __name__ == '__main__':
-    a = API()
-    a.create('http://www.google.de/')
-
-    pass
