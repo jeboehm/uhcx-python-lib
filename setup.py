@@ -16,5 +16,5 @@ setup(
     url='http://uh.cx/page/api',
     license='LICENSE.txt',
     description='Provide an api for uh.cx link shortening service.',
-    long_description=open('README.txt').read()
+    long_description=open('README.md').read()
 )
