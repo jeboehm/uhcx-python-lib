@@ -1,22 +1,17 @@
-# -*- coding: utf-8 -*-
 """
-uh.cx API interface
+Python library for the uh.cx link shortener.
 
 http://uh.cx/
-
 
 Example!
 """
 
-import uhcx
+from uhcx import Manager
 
-api = uhcx.API()
-link = api.create('http://www.google.com/')
+link = Manager.create('http://www.google.com/')
 
-print link.get_url_original()
-print link.get_url_direct()
-print link.get_url_preview()
-print link.get_qr_direct()
-print link.get_qr_preview()
-
-
+print(link.url_original)
+print(link.url_redirect)
+print(link.url_preview)
+print(link.qr_redirect)
+print(link.qr_preview)

@@ -6,14 +6,20 @@ http://uh.cx/
 """
 
 import unittest
+
 import uhcx
 
 
-class APITests(unittest.TestCase):
+class Tests(unittest.TestCase):
     def testCreateLink(self):
-        api = uhcx.API()
-        link = api.create('http://www.google.de/')
-        self.assertEqual(u'http://www.google.de/', link.get_url_original())
+        url = 'http://www.google.de/'
+        link = uhcx.Manager.create(url)
+
+        self.assertIsNotNone(link)
+        self.assertEqual(url, link.url_original)
+
+    def testCreateInvalidLink(self):
+        self.assertRaises(uhcx.Manager.CouldNotCreateLinkException, uhcx.Manager.create, 'asd')
 
 
 def main():
