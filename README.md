@@ -1,23 +1,31 @@
-uh.cx Python API
-================
+# README
 
-This package provides an interface to the
-uh.cx link shortening service.
+This provides a library for the uh.cx link shortening service.
 
-For more information see:
-http://uh.cx/page/api
+[![Build Status](https://travis-ci.org/jeboehm/uhcx-python-lib.svg?branch=master)](https://travis-ci.org/jeboehm/uhcx-python-lib)
 
-Usage
------
+## Installation
 
-See in example.py.
+``` shell
+pip3 install uhcx
+```
 
-Tests
------
+## Usage
 
-[![Build Status](https://travis-ci.org/jeboehm/UhcxPythonAPI.png?branch=master)](https://travis-ci.org/jeboehm/UhcxPythonAPI)
+``` python
+from uhcx import Manager
 
-Copyright
----------
+link = Manager.create('http://www.google.com/')
 
-(c) 2013 J. Boehm <jb@uh.cx>
+print(link.url_original)
+print(link.url_redirect)
+print(link.url_preview)
+print(link.qr_redirect)
+print(link.qr_preview)
+```
+
+## More information
+
+For more information visit http://uh.cx/
+
+Have fun!
